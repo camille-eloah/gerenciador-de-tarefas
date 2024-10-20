@@ -1,5 +1,5 @@
 # gerenciador-de-tarefas
-CRUD de gerenciamento de tarefas com MySQL + framework Flask
+CRUD de gerenciamento de tarefas com MySQL, Python e framework Flask
 
 ## Instruções 
 1. Instale as bibliotecas e dependências necessárias através do requirements.txt (recomenda-se que utilize um ambiente virtual)
