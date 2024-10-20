@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block title %}Atualizar tarefa{% endblock %}
+
+{% block content %}
+    <form action="{{ url_for('atualizar_tarefa', id=tarefa['trf_id']) }}" method="POST">
+        <label for="novadesc">Nova Descrição</label>
+        <input type="text" name="novadesc" value="{{ tarefa['trf_descricao'] }}" required><br>
+    
+        <label for="novostatus">Novo Status</label>
+        <select name="novostatus" required>
+            <option value="Concluida" {% if tarefa.trf_status == 'Concluida' %}selected{% endif %}>Concluída</option>
+            <option value="Em_andamento" {% if tarefa.trf_status == 'Em_andamento' %}selected{% endif %}>Em andamento</option>
+            <option value="Pendente" {% if tarefa.trf_status == 'Pendente' %}selected{% endif %}>Pendente</option>
+        </select><br>
+    
+        <label for="novoprazo">Novo Prazo</label>
+        <input type="datetime-local" name="novoprazo" value="{{ tarefa['trf_data_limite'] }}" required><br>
+    
+        <button type="submit">Atualizar Tarefa</button>
+    </form>    
+</form>
+{% endblock %}

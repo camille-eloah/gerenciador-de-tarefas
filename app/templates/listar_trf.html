@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block title %}Listar tarefas{% endblock %}
+
+{% block content %}
+    <h1>Liste suas tarefas aqui!</h1>
+    
+    <form action="{{ url_for('listar_trf') }}" method="POST">
+        <label for="tarefas">Filtros para tarefas:</label>
+        <select name="filtro" id="tarefas" onchange="this.form.submit()">
+            <option value="">Selecione um filtro</option>
+            <option value="Descricao" {% if filtro == 'Descricao' %}selected{% endif %}>Descrição</option>
+            <option value="Status" {% if filtro == 'Status' %}selected{% endif %}>Status</option>
+            <option value="Data_criacao" {% if filtro == 'Data_criacao' %}selected{% endif %}>Data de criação</option>
+            <option value="Data_limite" {% if filtro == 'Data_limite' %}selected{% endif %}>Data limite</option>
+            <option value="Prioridade" {% if filtro == 'Prioridade' %}selected{% endif %}>Prioridade</option>
+            <option value="Categoria" {% if filtro == 'Categoria' %}selected{% endif %}>Categoria</option>
+        </select>
+
+        {% if filtro == 'Status' %}
+        <div>
+            <label for="status">Escolha o status:</label>
+            <select name="status" id="status">
+                <option value="Concluida">Concluída</option>
+                <option value="Em_andamento">Em andamento</option>
+                <option value="Pendente">Pendente</option>
+            </select>
+        </div>
+        {% elif filtro == 'Data_criacao' %}
+        <div>
+            <label for="data_inicial">Data inicial:</label>
+            <input type="date" name="data_inicial">
+            <label for="data_final">Data final:</label>
+            <input type="date" name="data_final">
+        </div>
+        {% elif filtro == 'Data_limite' %}
+        <div>
+            <label for="prazo_inicial">Prazo inicial:</label>
+            <input type="date" name="prazo_inicial">
+            <label for="prazo_final">Prazo final:</label>
+            <input type="date" name="prazo_final">
+        </div>
+        {% elif filtro == 'Prioridade' %}
+        <div>
+            <label for="prioridade">Escolha a prioridade:</label>
+            <select name="prioridade" id="prioridade">
+                <option value="Baixa">Baixa</option>
+                <option value="Media">Média</option>
+                <option value="Alta">Alta</option>
+            </select>
+        </div>
+        {% elif filtro == 'Categoria' %}
+        <div>
+            <label for="categoria">Escolha a categoria:</label>
+            <select name="categoria" id="categoria">
+                <option value="Trabalho">Trabalho</option>
+                <option value="Estudo">Estudo</option>
+                <option value="Pessoal">Pessoal</option>
+            </select>
+
+        </div>
+        {% elif filtro == 'Descricao' %}
+        <div>
+            <label for="descricao">Palavras-chave (Descrição):</label>
+            <input type="text" name="descricao">
+        </div>
+        {% endif %}
+
+        <button type="submit">Filtrar</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Descrição</th>
+                <th>Status</th>
+                <th>Data de Criação</th>
+                <th>Prazo</th>
+                <th>Prioridade</th>
+                <th>Categoria</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for tarefa in tarefas %}
+            <tr>
+                <td>{{ tarefa.trf_descricao }}</td>
+                <td>
+                    {% if tarefa.trf_status == 'Em_andamento' %}
+                    Em andamento 
+                    {% else %}
+                    {{ tarefa.trf_status }}
+                    {% endif %}
+                </td>
+                <td>{{ tarefa.trf_data_criacao}}</td>
+                <td>{{ tarefa.trf_data_limite }}</td>
+                <td>{{ tarefa.trf_prioridade }}</td>
+                <td>{{ tarefa.trf_categoria }}</td>
+                <td>
+                    <a href="{{ url_for('atualizar_tarefa', id=tarefa.trf_id) }}">
+                        <button>Atualizar Tarefa</button>
+                    </a>
+                    <a href="{{ url_for('excluir_tarefa', id=tarefa.trf_id) }}">
+                        <button>Excluir Tarefa</button>
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

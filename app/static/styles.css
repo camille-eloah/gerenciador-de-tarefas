@@ -1,0 +1,12 @@
+table {
+    width: 100%; 
+    border-collapse: collapse; /* Para evitar espaços entre as células */
+}
+th, td {
+    text-align: center; 
+    border: 1px solid #ddd; 
+    padding: 8px; 
+}
+th {
+    background-color: #f2f2f2; 
+}
