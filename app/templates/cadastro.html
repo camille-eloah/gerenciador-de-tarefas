@@ -3,6 +3,7 @@
 {% block title %}Cadastro de Usuário{% endblock %}
 
 {% block content %}
+<div class="content">
     <h1>Cadastro</h1>
     <form action="{{url_for('cadastro')}}" method="POST">
         <label for="username">Nome de Usuário</label>
@@ -16,5 +17,5 @@
 
         <input type="submit" value="Enviar">
     </form>
-
+</div>
 {% endblock %}
