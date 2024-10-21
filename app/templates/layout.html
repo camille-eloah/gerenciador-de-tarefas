@@ -14,8 +14,11 @@
                 <li><a href="{{ url_for('cadastro') }}">Cadastro de Usuário</a></li>
                 <li><a href="{{ url_for('add_trf') }}">Adicionar Tarefa</a></li>
                 <li><a href="{{ url_for('listar_trf') }}">Listar Tarefas</a></li>
-                <li><a href="{{ url_for('login') }}">Login</a></li>
+                {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>
