@@ -3,18 +3,13 @@
 {% block title %}Página Inicial{% endblock %}
 
 {% block content %}
+    <div class="content">
     {% if user_nome %}
         <h1>Bem-vindo, {{ user_nome }}!</h1>
     {% else %}
         <h1>Bem-vindo a Página Inicial, visitante!</h1>
     {% endif %}
     <h3>Selecione o link e seja redirecionado para a página desejada!</h3>
-
-    <a href="/cadastro">Cadastro de Usuário<a>
-    <a href="/add_trf">Adicionar Tarefa<a>
-    <a href="/listar_trf">Listar Tarefas</a>
-    <a href="/login">Login<a></a>
-    <a href="/logout">Logout</a>
-    
+    </div>
 
 {% endblock %}

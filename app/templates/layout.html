@@ -7,15 +7,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> 
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{{ url_for('cadastro') }}">Cadastro de Usuário</a></li>
-            <li><a href="{{ url_for('add_trf') }}">Adicionar Tarefa</a></li>
-            <li><a href="{{ url_for('listar_trf') }}">Listar Tarefas</a></li>
-            <li><a href="{{ url_for('login') }}">Login</a></li>
-            <li><a href="{{ url_for('logout') }}">Logout</a></li>
-        </ul>
-    </nav>
+    <div class="menu">
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="{{ url_for('cadastro') }}">Cadastro de Usuário</a></li>
+                <li><a href="{{ url_for('add_trf') }}">Adicionar Tarefa</a></li>
+                <li><a href="{{ url_for('listar_trf') }}">Listar Tarefas</a></li>
+                <li><a href="{{ url_for('login') }}">Login</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <div class="container">
         {% block content %}
