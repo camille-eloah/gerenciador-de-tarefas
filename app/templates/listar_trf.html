@@ -101,7 +101,7 @@
                     <a href="{{ url_for('atualizar_tarefa', id=tarefa.trf_id) }}">
                         <button>Atualizar Tarefa</button>
                     </a>
-                    <a href="{{ url_for('excluir_tarefa', id=tarefa.trf_id) }}">
+                    <a href="{{ url_for('excluir_tarefa', id=tarefa.trf_id) }}" onclick="return confirm ('Você tem certeza que deseja remover essa tarefa?')">
                         <button>Excluir Tarefa</button>
                     </a>
                 </td>
