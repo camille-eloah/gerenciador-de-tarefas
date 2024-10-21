@@ -3,6 +3,7 @@
 {% block title %}Criar tarefas{% endblock %}
 
 {% block content %}
+<div class="content">
     <h1>Adicione uma nova tarefa aqui!</h1>
     <form action="{{url_for('add_trf')}}" method="POST">
 
@@ -39,4 +40,5 @@
         <button type="submit">Adicionar Tarefa</button>
 
     </form>
+</div>
 {% endblock %}

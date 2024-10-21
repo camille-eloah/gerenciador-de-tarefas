@@ -3,6 +3,7 @@
 {% block title %}Atualizar tarefa{% endblock %}
 
 {% block content %}
+
     <form action="{{ url_for('atualizar_tarefa', id=tarefa['trf_id']) }}" method="POST">
         <label for="novadesc">Nova Descrição</label>
         <input type="text" name="novadesc" value="{{ tarefa['trf_descricao'] }}" required><br>
