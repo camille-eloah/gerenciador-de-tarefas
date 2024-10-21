@@ -171,8 +171,11 @@ def filtrar_tarefa(filtro, form_data, user_id):
 
 
     elif filtro == 'Data_limite':
+        prazo_inicial = form_data.get('prazo_inicial')
+        prazo_final = form_data.get('prazo_final')
         # Verifica tarefas que faltam 3 dias ou que já venceram
-        query += " AND (trf_data_limite <= CURDATE() OR trf_data_limite BETWEEN CURDATE() AND DATE_ADD(CURDATE(), INTERVAL 3 DAY))"
+        query += " AND (trf_data_limite <= CURDATE() OR trf_data_limite BETWEEN %s AND %s)"
+        params.extend([prazo_inicial, prazo_final])
 
 
     elif filtro == 'Prioridade':
