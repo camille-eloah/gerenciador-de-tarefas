@@ -166,7 +166,7 @@ def filtrar_tarefa(filtro, form_data, user_id):
         data_inicial = form_data.get('data_inicial')
         data_final = form_data.get('data_final')
         if data_inicial and data_final:  
-            query += " AND trf_data_cricao BETWEEN %s AND %s"
+            query += " AND trf_data_criacao BETWEEN %s AND %s"
             params.extend([data_inicial, data_final])
 
 
