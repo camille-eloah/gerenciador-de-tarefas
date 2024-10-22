@@ -1,7 +1,14 @@
 * {
     font-family: Arial, Helvetica, sans-serif;
+    margin: 0px;
+
+    
 }
 
+body {
+    color: white;
+    background-color: #14213d;
+}
 
 table {
     width: 95%; 
@@ -13,12 +20,19 @@ th, td {
     padding: 8px; 
 }
 th {
-    background-color: #f2f2f2; 
+    background-color: rgb(0, 0, 0);
+    color: white;
 }
 
 .navbar {
     display: flex;
     align-items: center;
+    background-color: rgb(0, 0, 0);
+
+    color: rgb(255, 255, 255);
+    padding: 0px;
+    height: 70px;
+    justify-content: center;
 
 }
 
@@ -30,8 +44,138 @@ th {
 
         li a {
             text-decoration: none;
+            color: rgb(255, 255, 255);
         }
 
 .content {
-    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+  
+
+}
+
+button {
+    color: black;
+}
+
+#form_cd {
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 50px;
+    height: 200px;
+    display: flex;
+    width: 200px;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#form_atlz {
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 50px;
+    height: 200px;
+    display: flex;
+    width: 220px;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#form_cd h1 {
+    margin-bottom: 30px;
+    font-size: 25px;
+
+}
+
+#form_add h1 {
+    margin-bottom: 30px;
+    font-size: 20px;
+
+}
+
+#cadastro {
+    display: flex;
+    width: 100%;
+    height: 10%;
+}
+
+#add {
+    display: flex;
+    width: 100%;
+    height: 8%;
+
+}
+
+#atlz {
+    display: flex;
+    width: 100%;
+    height: 8%;
+    
+
+}
+
+
+#login {
+    display: flex;
+    width: 100%;
+    height: 15%;
+}
+
+#botao {
+    display: flex;
+    margin-left: 30%;
+    width: 40%;
+    border-radius: 5px;
+    
+    
+}
+
+#botao_add{
+    display: flex;
+    margin-left: 30%;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#botao_atlz{
+    display: flex;
+    margin-left: 20%;
+    margin-top: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#form_add {
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 70px;
+    height: 300px;
+    display: flex;
+    border-radius: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#status, #categoria, #prioridade {
+    width: 70%;
+    height: 8%;
+    margin-top: 5px;
+}
+
+#h1_listar, #tarefas{
+    margin-bottom: 20px;
+}
+
+#form_atlz h1{
+    font-size: 20px;
+    padding-bottom: 15px;
 }

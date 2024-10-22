@@ -4,16 +4,18 @@
 
 {% block content %}
     <div class="content">
-    <h1>Login</h1>
-    <form action="{{url_for('login')}}" method="POST">
-        <label for="email">E-mail</label>
-        <input type="email" name="email"><br>
-        
-        <label for="password">Senha</label>
-        <input type="password" name="pass"><br>
+        <div id="form_cd">
+            <h1>Login</h1>
+            <form action="{{url_for('login')}}" method="POST">
+                <label for="email">E-mail</label>
+                <input type="email" name="email" id="login"><br>
+                
+                <label for="password">Senha</label>
+                <input type="password" name="pass" id="login"><br>
 
-        <input type="submit" value="Enviar">
-    </form>
+                <input type="submit" value="Enviar" id="botao">
+            </form>
+        </div>
     </div>
 
 {% endblock %}
